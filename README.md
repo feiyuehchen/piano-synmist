@@ -33,6 +33,8 @@ piano-synmist/
             /output/
             /simiulate_mistakes.py
 ```
+In addition, 1.mid is a [youtube piano cover](https://www.youtube.com/watch?v=Bj2FclrjpiE&ab_channel=Hiumann) transcribed by [Transkun](https://github.com/Yujia-Yan/Transkun).
+
 ### Generating mistakes 
 ```
 python simulate_mistakes.py <input_midi_folder> <output_midi_folder> <run_id>

@@ -26,11 +26,13 @@ python simulate_mistakes.py data/ output/ 1
 
 ```
 Note that I've changed line 579 in simiulate_mistakes.py to get a glob list (contain midi paths) under this structure:
-data/
-    / 1.mid
-output/
-simiulate_mistakes.py
-
+```
+piano-synmist/
+            /data/
+                /1.mid
+            /output/
+            /simiulate_mistakes.py
+```
 ### Generating mistakes 
 ```
 python simulate_mistakes.py <input_midi_folder> <output_midi_folder> <run_id>

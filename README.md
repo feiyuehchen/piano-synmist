@@ -8,6 +8,29 @@ for other uses, please see the included LICENSE file
 This is the repository of SynMist, containing the synthesized mistake dataset as well as python scripts that generates the mistakes in a taxonomical way. ```simulate_mistakes.py``` and ```lowlvl.py``` contains functions regarding to the mid-level mistake scheduler and low-level deviation functions. ```region_classifier.py``` contains the simple texture \ technique region identifier. 
 
 
+### Install
+written by Fei Yueh Chen
+```
+# conda environment, python 3.9 works for me
+conda create -n mistake python=3.9
+conda activate mistake
+
+# install requirements
+git clone https://github.com/feiyuehchen/piano-synmist.git
+cd piano-synmist
+pip install -r requirements.txt
+
+# test with example data
+# <run_id> is necessary but you can choose any random integer
+python simulate_mistakes.py data/ output/ 1
+
+```
+Note that I've changed line 579 in simiulate_mistakes.py to get a glob list (contain midi paths) under this structure:
+data/
+    / 1.mid
+output/
+simiulate_mistakes.py
+
 ### Generating mistakes 
 ```
 python simulate_mistakes.py <input_midi_folder> <output_midi_folder> <run_id>

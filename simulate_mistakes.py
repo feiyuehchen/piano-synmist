@@ -576,8 +576,8 @@ if __name__ == '__main__':
     if p.ts_annot:
         filelist = ASAPLoader(p.in_folder)
     else:
-        filelist = [(i._str , []) for i in p.in_folder.glob('*/*.mid')] #this will ofc be specific to the given data folder. we add an empty array to mimic an empty ts_annot
-
+        filelist = [(str(i), []) for i in p.in_folder.glob('*.mid')]
+    print(f"filelist: {filelist}")
     for (fn_mid, ts_annot) in tqdm.tqdm(filelist): #maybe this will crash if it is from the non ASAPLoader path.
         try:
             mk = Mistaker(fn_mid, ts_annot)
@@ -612,5 +612,6 @@ if __name__ == '__main__':
             timemap_to_csv(mk.change_tracker.get_timemap(), mk.change_tracker.repeat_tracker, os.path.join(out_folder, '{}-mistake_timemap.csv'.format(stem)))
 
         except OSError:
+            print("oserror")
             pass
 
